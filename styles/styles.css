@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* Středověké Krčmové Styly */
+:root {
+  /* Fonty */
+  --font-heading-medieval: 'Uncial Antiqua', cursive; /* Pro hlavní nadpisy */
+  --font-subheading-medieval: 'MedievalSharp', cursive; /* Pro menší nadpisy, tlačítka */
+  --font-body-medieval: 'EB Garamond', serif; /* Pro běžný text */
+
+  /* Barvy Krčmy */
+  --color-wood-dark: #4a3b31; /* Tmavé dřevo */
+  --color-wood-medium: #6f5e50; /* Střední dřevo */
+  --color-wood-light: #a08b78; /* Světlé dřevo */
+  --color-parchment: #f5e8c8; /* Pergamen */
+  --color-parchment-darker: #e0d2b0; /* Tmavší pergamen pro stíny, okraje */
+  --color-ink: #3a2f28; /* Inkoust na pergamenu */
+  --color-ink-light: #5c4d42;
+  --color-metal-dark: #504A4B; /* Tmavý kov */
+  --color-metal-rust: #7E3A15; /* Rezavý kov */
+  --color-highlight-gold: #daa520; /* Zlatý akcent */
+  --color-highlight-red: #800000; /* Tmavě červená */
+
+  /* Styly karet */
+  --card-shadow-medieval: 5px 5px 10px rgba(0,0,0,0.4);
+  --card-hover-shadow-medieval: 8px 8px 15px rgba(0,0,0,0.5);
+  --card-border-radius-medieval: 6px; /* Méně zaoblené */
+  --image-height: 190px;
+  --gallery-gap: 25px;
+  --ribbon-width: 15px;
+  --ribbon-offset-top: 8px;
+
+  /* Textury (nahraďte skutečnými cestami k obrázkům) */
+  --texture-wood-bg: url('path/to/seamless-dark-wood.jpg');
+  --texture-parchment-bg: url('path/to/parchment-texture.jpg');
+  --texture-old-paper-card: url('path/to/old-paper-texture.jpg');
+}
+
+body {
+  font-family: var(--font-body-medieval);
+  background-color: var(--color-wood-dark);
+  background-image: var(--texture-wood-bg); /* Přidat texturu dřeva */
+  background-size: cover; /* Nebo repeat, podle textury */
+  background-attachment: fixed;
+  padding: 20px;
+  color: var(--color-parchment);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.page-header, .page-footer {
+  text-align: center;
+  color: var(--color-parchment);
+  font-family: var(--font-subheading-medieval);
+  text-shadow: 2px 2px 3px var(--color-wood-dark);
+}
+.page-header h1 {
+  font-family: var(--font-heading-medieval);
+  font-size: 3.5em; /* Větší, výraznější */
+  color: var(--color-highlight-gold);
+  margin-bottom: 30px;
+  padding: 10px;
+  display: inline-block;
+  border-bottom: 3px double var(--color-wood-light);
+}
+.page-footer {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.2);
+  border-top: 1px solid var(--color-wood-medium);
+}
+
+.main-content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Formuláře a Filtry ve stylu krčmy */
+.tavern-form {
+  background-color: var(--color-parchment);
+  /* background-image: var(--texture-parchment-bg); */
+  padding: 30px 35px;
+  border-radius: var(--card-border-radius-medieval);
+  border: 3px solid var(--color-wood-medium);
+  box-shadow: var(--card-shadow-medieval), inset 0 0 15px rgba(0,0,0,0.1);
+  margin-bottom: 35px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-ink);
+}
+
+.filter-container.tavern-form {
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tavern-form h2 {
+  font-family: var(--font-subheading-medieval);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: var(--color-ink);
+  font-size: 1.8em;
+  border-bottom: 1px solid var(--color-parchment-darker);
+  padding-bottom: 10px;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500; /* EB Garamond má různé řezy */
+  font-size: 1.1em; /* Větší pro lepší čitelnost */
+  color: var(--color-ink-light);
+  font-family: var(--font-body-medieval);
+  font-style: italic;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-wood-light);
+  border-bottom: 3px solid var(--color-wood-medium); /* Efekt dřevěné desky */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: var(--font-body-medieval);
+  background-color: var(--color-parchment-darker); /* Lehce tmavší než pozadí formuláře */
+  color: var(--color-ink);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--color-highlight-gold);
+  border-bottom-color: var(--color-highlight-gold);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2), 0 0 0 2px rgba(218, 165, 32, 0.3); /* Zlatý nádech */
+  outline: none;
+  background-color: var(--color-parchment); /* Světlejší při focusu */
+}
+.filter-container label { font-weight: 500; white-space: nowrap; margin-bottom: 0; font-style: normal;}
+
+/* Tlačítka ve stylu krčmy */
+.tavern-button {
+  padding: 12px 25px;
+  border: 2px solid var(--color-wood-dark);
+  border-radius: 4px; /* Hranatější */
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: var(--font-subheading-medieval); /* Výraznější font */
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 0px var(--color-wood-dark), /* Ostrý stín pro 3D efekt */
+              inset 0px 0px 0px 1px var(--color-wood-light); /* Vnitřní linka */
+}
+
+.button-primary.tavern-button {
+  background-color: var(--color-wood-medium);
+  /* background-image: url('path/to/button-wood-texture.jpg'); */
+  color: var(--color-parchment);
+  width: 100%;
+}
+.button-primary.tavern-button:hover {
+  background-color: var(--color-wood-light);
+  color: var(--color-ink);
+  border-color: var(--color-metal-dark);
+  box-shadow: 1px 1px 0px var(--color-wood-dark),
+              inset 0px 0px 0px 1px var(--color-wood-medium);
+  transform: translate(1px, 1px); /* Efekt stlačení */
+}
+
+.button-delete.tavern-button {
+  background-color: var(--color-highlight-red);
+  /* background-image: url('path/to/button-red-wood-texture.jpg'); */
+  color: var(--color-parchment);
+  border-color: var(--color-wood-dark);
+  font-size: 1em;
+  padding: 10px 18px;
+  width: 100%;
+}
+.button-delete.tavern-button:hover {
+  background-color: #a01010; /* Tmavší červená */
+  color: #f0e0c0;
+  border-color: var(--color-metal-rust);
+  box-shadow: 1px 1px 0px var(--color-wood-dark),
+              inset 0px 0px 0px 1px #600000;
+  transform: translate(1px, 1px);
+}
+
+/* Galerie a Karty jako staré svitky/dřevěné tabulky */
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gallery-gap);
+  justify-content: center;
+  padding: var(--gallery-gap) 0;
+}
+
+.gallery-item {
+  display: flex; /* Karta a stuha vedle sebe */
+  align-items: flex-start;
+  flex: 0 1 calc(20% - var(--gallery-gap) - var(--ribbon-width) - 5px); /* Upravit flex-basis */
+  min-width: calc(200px + var(--ribbon-width) + 5px); /* Minimální šířka pro kartu a stuhu */
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  position: relative; /* Pro případné absolutní pozicování uvnitř */
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) rotate(-1deg); /* Trochu naklonit při hoveru */
+  z-index: 10; /* Aby byla karta nahoře */
+}
+
+.card.old-parchment {
+  background-color: var(--color-parchment);
+  background-image: var(--texture-old-paper-card); /* Textura starého papíru */
+  background-size: cover;
+  border-radius: var(--card-border-radius-medieval);
+  flex-grow: 1;
+  width: 0; /* pro flex-grow */
+  min-width: 200px; /* Min šířka samotné karty */
+  
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--color-wood-medium);
+  box-shadow: var(--card-shadow-medieval);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  color: var(--color-ink);
+}
+
+.gallery-item:hover .card.old-parchment {
+  box-shadow: var(--card-hover-shadow-medieval);
+  border-color: var(--color-highlight-gold);
+}
+
+.card img {
+  width: 100%;
+  height: var(--image-height);
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid var(--color-wood-medium); /* Oddělení obrázku */
+  filter: sepia(0.3) saturate(0.8) contrast(0.9); /* Starý vzhled obrázku */
+  transition: filter 0.3s ease;
+}
+.gallery-item:hover .card img {
+  filter: sepia(0) saturate(1) contrast(1); /* Plné barvy při hoveru */
+}
+
+.card-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content h3 {
+  font-family: var(--font-subheading-medieval);
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.4em; /* Větší název karty */
+  color: var(--color-ink);
+  text-align: center;
+}
+.card-description {
+  font-size: 0.95em;
+  color: var(--color-ink-light);
+  margin-bottom: 15px;
+  flex-grow: 1;
+  line-height: 1.6;
+  font-style: italic;
+}
+.card-expansion {
+  font-size: 0.85em;
+  color: var(--color-ink-light);
+  margin-bottom: 10px;
+  text-align: right; /* Expanze napravo */
+}
+.card-expansion strong { font-weight: bold; font-style: normal; }
+
+.card-rating {
+  font-size: 1.5em; /* Větší piva */
+  color: var(--color-highlight-gold); /* Piva mohou mít zlatavou barvu */
+  /* Nebo jinou barvu, např. var(--color-wood-medium) pokud chcete tmavší piva */
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 0.1em; /* Malá mezera mezi pivy, pokud jich je více */
+}
+
+
+
+/* Stuha rarity - napravo */
+.rarity-ribbon {
+  width: var(--ribbon-width);
+  height: calc(var(--image-height) - (2 * var(--ribbon-offset-top)));
+  margin-top: var(--ribbon-offset-top);
+  margin-left: 6px; /* Mezera mezi kartou a stuhou */
+  border-radius: 0 3px 3px 0; /* Zaoblení jen na pravé straně */
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  position: relative; /* Pro "vystřižený" konec */
+}
+/* Vystřižený konec stuhy - pokročilejší, můžete zjednodušit */
+.rarity-ribbon::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* Výška "vystřižení" */
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 var(--ribbon-width) 8px 0; /* Trojúhelník směřující nahoru */
+  border-color: transparent transparent var(--background-body) transparent; /* Barva pozadí body */
+}
+
+.rarity-ribbon-common { background-color: #90A4AE; } /* Břidlicová šeď */
+.rarity-ribbon-rare { background-color: #4FC3F7; } /* Světlejší modrá */
+.rarity-ribbon-epic { background-color: #BA68C8; } /* Jemná fialová */
+.rarity-ribbon-legendary { background-color: var(--color-highlight-gold); }
+
+.gallery-item:hover .rarity-ribbon {
+  transform: translateX(2px); /* Lehké vysunutí stuhy */
+}
+
+
+/* Responzivita - upravené flex-basis pro gallery-item */
+@media (max-width: 1450px) { /* Zvětšil jsem breakpointy kvůli širší položce se stuhou */
+  .gallery-item { flex: 0 1 calc(25% - var(--gallery-gap) - var(--ribbon-width) - 5px); }
+  :root { --image-height: 180px; }
+}
+@media (max-width: 1150px) {
+  .gallery-item { flex: 0 1 calc(33.333% - var(--gallery-gap) - var(--ribbon-width) - 5px); }
+  :root { --image-height: 170px; }
+}
+@media (max-width: 868px) {
+  .gallery-item { flex: 0 1 calc(50% - var(--gallery-gap) - var(--ribbon-width) - 5px); }
+   .page-header h1 { font-size: 2.8em; }
+}
+@media (max-width: 600px) {
+  .gallery-item { flex: 0 1 100%; min-width: unset; } /* 1 karta, min-width není tak kritický */
+  body { padding: 10px; }
+  .tavern-form { margin-left: 5px; margin-right: 5px; padding: 20px;}
+  :root { --gallery-gap: 15px; --image-height: 200px; --ribbon-width: 12px; }
+  .page-header h1 { font-size: 2.2em; }
+}
+@media (max-width: 1450px), (max-width: 1150px), (max-width: 868px), (max-width: 600px) {
+  .rarity-ribbon {
+    height: calc(var(--image-height) - (2 * var(--ribbon-offset-top)));
+  }
+  .rarity-ribbon::after { /* Upravit pozici vystřižení podle šířky */
+      border-width: 0 var(--ribbon-width) 8px 0;
+  }
+}
