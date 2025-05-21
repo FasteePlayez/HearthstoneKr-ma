@@ -1,2 +1,2 @@
-# HearthstoneKr-ma
+# HearthstoneKrcma
 galerie hearthstone karet
